@@ -1,0 +1,15 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+  - 'msbuild.exe "Test.sln"'
+
+deploy to prd:
+  stage: deploy
+  script:
+  - 'msbuild.exe "Test.sln"'
+  - 'copy *.* c:\Test\'
+ 
