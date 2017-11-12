@@ -2,6 +2,10 @@ stages:
   - build
   - deploy
 
+before_script:
+  - "echo off"
+  - 'call "%VS140COMNTOOLS%\vsvars32.bat"'
+
 build:
   stage: build
   script:
